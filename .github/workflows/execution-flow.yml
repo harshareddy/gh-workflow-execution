@@ -81,4 +81,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: output informaation
-        run: echo "Reporting..."
+        run: |
+          echo "Lint job status: ${{ needs.lint.result }}"
+          echo "Deploy job status: ${{ needs.deploy.result }}"
